@@ -8,10 +8,10 @@ const nav = useNav()
 <template>
   <main>
     <button v-if="!nav.visible" @click="nav.toggleVisible" class="showNav">o</button>
-    <div class="nav">
+    <div class="nav" v-if="nav.visible">
       <NavLinks />
     </div>
-    <div class="pages"></div>
+    <div class="pages">a</div>
   </main>
 </template>
 
@@ -27,16 +27,24 @@ const nav = useNav()
 @media screen and (min-width: 500px) {
   main {
     display: flex;
-  }
 
-  .nav {
-    width: 18%;
-    height: 100vh;
-  }
+    .showNav {
+      position: absolute;
+      background-color: red;
+      height: 2rem;
+      width: 2rem;
+      margin: 1.5rem;
+    }
 
-  .pages {
-    width: 82%;
-    height: 100vh;
+    .nav {
+      width: 18%;
+      height: 100vh;
+    }
+  
+    .pages {
+      width: 100%;
+      height: 100vh;
+    }
   }
 }
 

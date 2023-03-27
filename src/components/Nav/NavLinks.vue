@@ -13,40 +13,52 @@ const links = [
 </script>
 
 <template>
-  <nav v-if="nav.visible">
+  <div v-if="nav.visible" class="container">
     <button class="close" @click="nav.toggleVisible">X</button>
-    <ul>
-      <li v-for="(link, id) of links" :key="id">
-        <RouterLink :to="link.path" class="router">{{ link.name }}</RouterLink>
-      </li>
-    </ul>
-  </nav>
+    <nav>
+      <ul>
+        <li v-for="(link, id) of links" :key="id">
+          <RouterLink :to="link.path" class="router">{{ link.name }}</RouterLink>
+        </li>
+      </ul>
+    </nav>
+  </div>
 </template>
 
 <style scoped lang="scss">
 
-.close {
-  align-self: flex-start;
-}
 
-nav {
-  width: 100%;
+.container {
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: end;
-
-  & ul {
-    list-style: none;
-
-    & li {
-      margin: 1rem;
+  widows: 100%;
+  
+  .close {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  nav {
+    background-color: aquamarine;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: end;
+  
+    & ul {
+      list-style: none;
+  
+      & li {
+        margin: 1rem;
+      }
+    }
+  
+    & .router {
+      text-decoration: none;
     }
   }
-
-  & .router {
-    text-decoration: none;
-  }
 }
+
 </style>
