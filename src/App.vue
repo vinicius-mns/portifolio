@@ -4,6 +4,7 @@
 <template>
   <header>
     hello world
+    <RouterLink to="/vinicius">Vinicius</RouterLink>
   </header>
   <RouterView />
 </template>
