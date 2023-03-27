@@ -5,6 +5,7 @@
   <header>
     hello world
   </header>
+  <RouterView />
 </template>
 
 <style scoped>
